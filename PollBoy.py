@@ -89,4 +89,4 @@ async def on_message(message):
             
             
         
-client.run(token)
+client.run(token) # replace "token" with your own bot token.
