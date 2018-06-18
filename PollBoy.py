@@ -65,7 +65,7 @@ async def on_message(message):
         else:
             await client.send_message(message.channel, "{0.author.mention} please wait until the current Poll is finished to start a new one.".format(message))
 
-    if (message.content.startswith("$n")):
+    if (message.content.startswith("$n") or message.content.startswith("$N")):
         if (pollRunning == True):
             author ="{0.author.mention}".format(message)
             if not author in voted:
@@ -76,7 +76,7 @@ async def on_message(message):
             else:
                 await client.send_message(message.channel, "{0.author.mention} You've already voted.".format(message))
             
-    if (message.content.startswith("$y")):
+    if (message.content.startswith("$y") or message.content.startswith("$Y")):
         if (pollRunning == True):
             author ="{0.author.mention}".format(message)
             if not author in voted:
