@@ -2,18 +2,16 @@
 A discord bot which allows simple in-chat yes-or-no polls.
 
 Created on: 12/31/17
+Readme updated on: 6/18/18
 
-## Installation
-To setup your own Poll-Boy bot you'll need to:  
+## How do I get the bot running?
 
-
- ***1**. Download the .py file.*  
- ***2**. Go to [the Discord Developer Page](https://discordapp.com/developers/applications/me) and create a New App.*  
- ***3**. Add a bot user*  
- ***4**. Go to this url with your own client id added https://discordapp.com/api/oauth2/authorize?client_id=YOUR-CLIENT-ID-HERE&permissions=537078784&scope=bot*  
- ***5**. Add bot to server which you select.*  
- ***6**. Add your bot token (you can get the bot token from your discord app page) to the .py file one the last line (as a string! "")*  
- ***7**. Put the .py script running on a server or your computer.*    
+# For Windows
+ * Download the .exe from the zip or clone the repo onto your pc with git `git clone https://github.com/MilanDonhowe/Poll-Boy`
+ * Make an app at https://discordapp.com/developers/applications/me
+ * Add a bot user to your app, add the bot to your server and get the bot user's token. ([Good tutorial for how to do that here](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token))
+ * Run the .exe file
+ * Paste the bot token into the prompt
  
  
 ***Experiencing troubles?  Bring up an issue over on the issues tab!***
