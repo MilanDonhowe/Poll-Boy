@@ -6,13 +6,15 @@ Readme updated on: 6/18/18
 
 ## How do I get the bot running?
 
-# For Windows
+### Windows
  * Download the .exe from the zip or clone the repo onto your pc with git `git clone https://github.com/MilanDonhowe/Poll-Boy`
  * Make an app at https://discordapp.com/developers/applications/me
  * Add a bot user to your app, add the bot to your server and get the bot user's token. ([Good tutorial for how to do that here](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token))
  * Run the .exe file
  * Paste the bot token into the prompt
- 
+### Linux
+Good luck nerd.
+
  
 ***Experiencing troubles?  Bring up an issue over on the issues tab!***
 
