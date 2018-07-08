@@ -4,11 +4,6 @@ A discord bot which allows simple in-chat yes-or-no polls.
 ![pollboy logo](https://raw.githubusercontent.com/MilanDonhowe/ReadmeImages/master/f078dc71c69a0ce82fc857038d477956.png "The PollBoy Logo, ain't it the cutest thing you've ever seen?")
 
 Last updated on: 7/7/18
-# How do I get the bot running?
-
-1. [Click this](https://discordapp.com/api/oauth2/authorize?client_id=397108089049841664&permissions=0&scope=bot)
-2. Go through the steps provided after you click the link (Logging in, selecting server, etc.)
-3. Enjoy some awesome poll action!
 
 ***Experiencing troubles?  Bring up an issue over on the issues tab!***
 
