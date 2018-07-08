@@ -1,27 +1,21 @@
-# Poll-Boy - A discord bot for better decision making.
-A discord bot which allows simple in-chat yes-or-no polls.
+# Poll-Boy - A discord bot for better decision making.  
 
-Created on: 12/31/17
-Readme updated on: 6/18/18
+A discord bot which allows simple in-chat yes-or-no polls.  
+![pollboy logo](https://raw.githubusercontent.com/MilanDonhowe/ReadmeImages/master/f078dc71c69a0ce82fc857038d477956.png "The PollBoy Logo, ain't it the cutest thing you've ever seen?")
 
-## How do I get the bot running?
+Last updated on: 7/7/18
+# How do I get the bot running?
 
-### Windows
- * Download the .exe from the zip or clone the repo onto your pc with git `git clone https://github.com/MilanDonhowe/Poll-Boy`
- * Make an app at https://discordapp.com/developers/applications/me
- * Add a bot user to your app, add the bot to your server and get the bot user's token. ([Good tutorial for how to do that here](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token))
- * Run the .exe file
- * Paste the bot token into the prompt
-### Linux
-Good luck nerd.
+1. [Click this](https://discordapp.com/api/oauth2/authorize?client_id=397108089049841664&permissions=0&scope=bot)
+2. Go through the steps provided after you click the link (Logging in, selecting server, etc.)
+3. Enjoy some awesome poll action!
 
- 
 ***Experiencing troubles?  Bring up an issue over on the issues tab!***
 
 ## Usage
 * ```$poll [yes or no question]``` - Creates poll.  
-* ```$y``` - Votes yes for current poll.  
-* ```$n``` - Votes no for current poll.  
+* ```$y or $Y``` - Votes yes for current poll.  
+* ```$n or $N``` - Votes no for current poll.  
 * ```$help``` - Displays help screen.  
 ### Example  
 
