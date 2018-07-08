@@ -5,12 +5,24 @@
 import discord
 import asyncio
 
+# Get user token for .exe version
+
+#print("To exit press ctrl+c")
+#print("Welcome to Poll-Boy!")
+#token = input("Please copy and paste your token here: ")
+
+client = discord.Client()
+
+
+
+
+
 # Global variables
 
-pollRunning = False;
+channelsRunning = []
 pollYes = 0
 pollNo = 0
-voted = []
+voted = {}
 client = discord.Client()
 realPoll = None
 pollTitle = ''
@@ -39,10 +51,22 @@ async def on_message(message):
         '$poll' - Starts a in-chat poll.  Format: ```$poll [name of poll here]``` By default a poll lasts 40 seconds.""".format(message)
         await client.send_message(message.channel, helpInfo)
         
+    # check channels - Used for testing purposes
+    #currentChannels = []
+    
+    #if message.content.startswith("$debug"):
+    #    for server in client.servers:
+    #        for channel in server.channels:
+    #            if(channel.type == discord.ChannelType.text):
+    #                currentChannels.append(channel)
+    #                print("Added one!")
+    #    print(currentChannels)
+    #    print(message.channel in currentChannels)
+    
     if message.content.startswith("$poll"):
-        if (pollRunning == False):
-            voted = []
-            pollRunning = True
+        if (message.channel not in channelsRunning):
+            voted[message.channel] = []
+            channelsRunning.append(message.channel)
             pollTitle = message.content[5:]
             pollYes = 0
             pollNo = 0
@@ -54,7 +78,7 @@ async def on_message(message):
             ```
             """ % (str(pollTitle), str(pollYes), str(pollNo)))       
             await asyncio.sleep(40.0)
-            pollRunning = False;
+            channelsRunning.remove(message.channel)
             if (pollYes > pollNo):
                 await client.send_message(message.channel, "The majority (%s %s) responded 'yes' to the poll titled: %s." % (str((pollYes/(pollYes + pollNo))*100), "%" , str(pollTitle)))
             elif (pollYes < pollNo):
@@ -64,29 +88,27 @@ async def on_message(message):
             
         else:
             await client.send_message(message.channel, "{0.author.mention} please wait until the current Poll is finished to start a new one.".format(message))
-
+    # User Vote No
     if (message.content.startswith("$n") or message.content.startswith("$N")):
-        if (pollRunning == True):
+        if (message.channel in channelsRunning):
             author ="{0.author.mention}".format(message)
-            if not author in voted:
-                voted.append(author)
-                print(voted)
+            if not author in voted[message.channel]:
+                voted[message.channel].append(author)
                 pollNo += 1
                 await update_poll(realPoll, pollTitle, pollNo, pollYes)
             else:
                 await client.send_message(message.channel, "{0.author.mention} You've already voted.".format(message))
-            
+    # User Vote Yes        
     if (message.content.startswith("$y") or message.content.startswith("$Y")):
-        if (pollRunning == True):
+        if (message.channel in channelsRunning):
             author ="{0.author.mention}".format(message)
-            if not author in voted:
-                voted.append(author)
-                print(voted)
+            if not author in voted[message.channel]:
+                voted[message.channel].append(author)
                 pollYes += 1
                 await update_poll(realPoll, pollTitle, pollNo, pollYes)
             else:
                 await client.send_message(message.channel, "{0.author.mention} You've already voted.".format(message))
             
             
-        
-client.run(token) # replace "token" with your own bot token.
+client.run("token")    
+#client.run(str(token)) for exe file
